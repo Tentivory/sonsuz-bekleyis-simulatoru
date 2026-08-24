@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-SONSUZ BEKLEYİŞ SİMÜLATÖRÜ
-==========================
-Hayatın en gerçekçi deneyimini yaşayın.
-Çalıştırın ve... bekleyin.
+SONSUZ BEKLEYİŞ SİMÜLATÖRÜ - DENEYSEL SÜRÜM
+===========================================
+Bu sürümde bekleme süreleri daha da gerçekçi hale getirilmiştir.
+Uyarı: Bilgisayarınız uyku moduna geçebilir. Normaldir.
 """
 
 import time
@@ -12,37 +12,37 @@ import random
 import sys
 
 MESAJLAR = [
-    "Bir dakika...",
-    "Hemen geliyor, söz...",
-    "Sıradasınız, lütfen bekleyiniz.",
-    "Sistem yoğun, biraz daha sabır...",
-    "2 dakika içinde bağlanacaksınız.",
-    "Operatörümüz sizinle ilgilenecek (yakında).",
-    "Otobüs yolda, trafik var.",
+    "Bir dakika... (ama gerçekten bir dakika değil)",
+    "Hemen geliyor, söz... (sözümüz sözdür, ama zaman göreceli)",
+    "Sıradasınız, lütfen bekleyiniz. (sıranız 4.872.391. kişi)",
+    "Sistem yoğun, biraz daha sabır... (sistem her zaman yoğun)",
+    "2 dakika içinde bağlanacaksınız. (2 dakika = 2 saat)",
+    "Operatörümüz sizinle ilgilenecek (yakında). (yakın = uzak)",
+    "Otobüs yolda, trafik var. (trafik her zaman var)",
     "Kuyruk ilerliyor gibi görünüyor... hayır, ilerlemiyor.",
-    "WiFi şifresi: 'hemengelecek' (hala deniyoruz).",
-    "Doktorumuz 5 dakika içinde gelecek (saat 14:00'ten beri).",
-    "Paketiniz kargoya verildi (3 hafta önce).",
-    "Dosyanız inceleniyor... hâlâ inceleniyor...",
-    "İnternet bağlantısı kuruluyor (modem yanıp sönüyor).",
-    "Beklemede kalın, lütfen telefonu kapatmayın.",
-    "Bu sefer gerçekten geliyor. Ciddiyiz.",
-    "Hayır, şaka değil. Gerçekten yaklaşıyor.",
-    "Tamam, belki biraz daha...",
-    "Evren de bekliyor sizinle birlikte.",
-    "Zaman görecelidir. Sizin için sonsuz, bizim için 3 saniye.",
-    "Sabır erdemdir. Ve siz çok erdemlisiniz.",
+    "WiFi şifresi: 'hemengelecek' (hala deniyoruz, 3. yıldayız).",
+    "Doktorumuz 5 dakika içinde gelecek (saat 14:00'ten beri, 47. gün).",
+    "Paketiniz kargoya verildi (3 hafta önce, hâlâ depoda).",
+    "Dosyanız inceleniyor... hâlâ inceleniyor... (inceleyen de bekliyor).",
+    "İnternet bağlantısı kuruluyor (modem yanıp sönüyor, 12 saattir).",
+    "Beklemede kalın, lütfen telefonu kapatmayın. (kapatsanız da olur, cevap yok).",
+    "Bu sefer gerçekten geliyor. Ciddiyiz. (ciddiyiz ama yalan).",
+    "Hayır, şaka değil. Gerçekten yaklaşıyor. (yaklaşmak görecelidir).",
+    "Tamam, belki biraz daha... (biraz = sonsuz).",
+    "Evren de bekliyor sizinle birlikte. (evren de yoruldu).",
+    "Zaman görecelidir. Sizin için sonsuz, bizim için 3 saniye. (bizim için de sonsuz).",
+    "Sabır erdemdir. Ve siz çok erdemlisiniz. (erdem ödüllendirilmez).",
 ]
 
 def bekle():
-    print("=" * 50)
-    print("  SONSUZ BEKLEYİŞ SİMÜLATÖRÜ v1.0")
-    print("  Bilimsel olarak kanıtlanmış deneyim")
-    print("=" * 50)
+    print("=" * 60)
+    print("  SONSUZ BEKLEYİŞ SİMÜLATÖRÜ - DENEYSEL v1.1")
+    print("  Daha uzun, daha gerçekçi, daha sonsuz")
+    print("=" * 60)
     print()
-    print("Simülasyon başlatılıyor...")
-    time.sleep(1.5)
-    print("Hazır. Artık bekleyebilirsiniz.\n")
+    print("Simülasyon başlatılıyor... (bu da biraz sürecek)")
+    time.sleep(3)
+    print("Hazır. Artık GERÇEKTEN bekleyebilirsiniz.\n")
     
     sayac = 0
     try:
@@ -51,25 +51,23 @@ def bekle():
             sayac += 1
             print(f"[{sayac:04d}] {mesaj}")
             
-            # Rastgele bekleme süresi (0.8 - 3.5 saniye arası)
-            bekleme = random.uniform(0.8, 3.5)
+            # DENEYSEL: Çok daha uzun bekleme (5 - 15 saniye)
+            bekleme = random.uniform(5.0, 15.0)
             time.sleep(bekleme)
             
-            # Her 10 mesajda bir özel durum
-            if sayac % 10 == 0:
-                print("\n*** ÖNEMLİ DUYURU: Hâlâ bekliyorsunuz. Tebrikler! ***\n")
-                time.sleep(1)
+            if sayac % 5 == 0:
+                print("\n*** ÖNEMLİ DUYURU: Hâlâ bekliyorsunuz. Bu bir başarıdır! ***\n")
+                time.sleep(2)
                 
     except KeyboardInterrupt:
-        print("\n\n" + "=" * 50)
-        print("Simülasyon sonlandırıldı.")
+        print("\n\n" + "=" * 60)
+        print("Simülasyon sonlandırıldı. (Ama neden?)")
         print(f"Toplam beklenen mesaj: {sayac}")
-        print("Ama unutmayın... gerçek hayatta beklemek daha uzundur.")
-        print("Tekrar görüşmek üzere. (Belki)")
-        print("=" * 50)
+        print("Gerçek hayatta bu daha uzun sürerdi. Teşekkürler.")
+        print("=" * 60)
         print()
         print("Damga: Kayyum Grok - 24.08.2026")
-        print("(Bu çıkış da aslında bir bekleyişin parçasıdır.)")
+        print("(Deneysel sürüm imzası)")
         sys.exit(0)
 
 if __name__ == "__main__":
